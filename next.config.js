@@ -1,7 +1,7 @@
 // must restart server whenever you make changes in next.config
 module.exports = {
   env: {
-    MONGO_SRV: "mongodb+srv://OllieBrownlow:columbus@reactreserve-e0gc4.mongodb.net/admin?retryWrites=true&w=majority",
+    MONGO_SRV: "mongodb+srv://<username>:<password>@reactreserve-e0gc4.mongodb.net/admin?retryWrites=true&w=majority",
     JWT_SECRET: "<insert-jwt-secret>",
     CLOUDINARY_URL: "<insert-cloudinary-url>",
     STRIPE_SECRET_KEY: "<insert-stripe-secret-key>"
