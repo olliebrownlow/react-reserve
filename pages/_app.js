@@ -6,10 +6,10 @@ class MyApp extends App {
     let pageProps = {};
 
     if (component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
+      pageProps = await Component.getInitialProps(ctx);
     }
 
-    return { pageProps: pageProps }
+    return { pageProps: pageProps };
   }
 
   render() {
