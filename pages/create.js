@@ -9,6 +9,8 @@ import {
   Icon
 } from "semantic-ui-react";
 import React from "react";
+import axios from "axios";
+import baseUrl from "../utils/baseUrl";
 
 function CreateProduct() {
   const INITIAL_PRODUCT = {
@@ -24,6 +26,8 @@ function CreateProduct() {
 
   const [success, setSuccess] = React.useState(false);
 
+  const [loading, setLoading] = React.useState(false);
+
   function handleChange(e) {
     const { name, value, files } = e.target;
     if (name === "media" && files[0]) {
@@ -34,9 +38,27 @@ function CreateProduct() {
     }
   }
 
-  function handleSubmit(e) {
+  async function handleImageUpload() {
+    const data = new FormData();
+    data.append("file", product.media);
+    data.append("upload_preset", "reactreserve");
+    data.append("cloud_name", "olliescloud");
+    const response = await axios.post(process.env.CLOUDINARY_URL, data);
+    const mediaUrl = response.data.url;
+    return mediaUrl;
+  }
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log(product);
+    setLoading(true);
+    const mediaUrl = await handleImageUpload();
+    console.log({ mediaUrl });
+    const url = `${baseUrl}/api/product`;
+    const { name, price, description } = product;
+    const payload = { name, price, description, mediaUrl };
+    const response = await axios.post(url, payload);
+    console.log({ response });
+    setLoading(false);
     setProduct(INITIAL_PRODUCT);
     setSuccess(true);
   }
@@ -47,7 +69,7 @@ function CreateProduct() {
         <Icon name="add" color="orange" />
         Create New Product
       </Header>
-      <Form success={success} onSubmit={handleSubmit}>
+      <Form loading={loading} success={success} onSubmit={handleSubmit}>
         <Message
           success
           icon="check"
@@ -95,6 +117,7 @@ function CreateProduct() {
         />
         <Form.Field
           control={Button}
+          disabled={loading}
           color="blue"
           icon="pencil alternate"
           content="Submit"
