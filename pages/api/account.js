@@ -20,6 +20,7 @@ export default async (req, res) => {
       res.status(404).send("User not found");
     }
   } catch (error) {
+    console.error(error);
     res.status(403).send("Invalid token");
   }
 };
