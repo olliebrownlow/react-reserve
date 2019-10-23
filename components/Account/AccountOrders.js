@@ -79,7 +79,7 @@ function AccountOrders({ orders }) {
         <Accordion
           fluid
           styled
-          excllusive={false}
+          exclusive={false}
           panels={mapOrdersToPanels(orders)}
         />
       )}
