@@ -43,7 +43,7 @@ export default async (req, res) => {
     // create charge with total, send receipt email
     const charge = await stripe.charges.create(
       {
-        currency: "usd",
+        currency: "gbp",
         amount: stripeTotal,
         receipt_email: paymentData.email,
         customer,
