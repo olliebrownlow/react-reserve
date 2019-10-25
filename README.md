@@ -23,56 +23,66 @@ To checkout a cart, use 4242 4242 4242 4242 for the card number.
 
 ## Screenshots and features
 
-<br/>
+- Signup page:
 
-- The home page:
-
-  ![screenshot1](./static/screenshots/homepage.PNG)
+  ![screenshot1](./static/screenshots/signup.PNG)
 
 <br/>
 
-- Products on home page are paginated:
+- Login page:
 
-  ![screenshot2](./static/screenshots/products-paginated.PNG)
+  ![screenshot2](./static/screenshots/login.PNG)
+
+<br/>
+
+- Home page:
+
+  ![screenshot3](./static/screenshots/homepage.PNG)
+
+<br/>
+
+- Products are paginated:
+
+  ![screenshot4](./static/screenshots/products-paginated.PNG)
 
 <br/>
 
 - Products can be individually viewed and added to your cart. Only root and admin users can delete products:
 
-  ![screenshot3](./static/screenshots/root-admin-delete-products.PNG)
+  ![screenshot5](./static/screenshots/root-admin-delete-products.PNG)
 
 <br/>
 
 - Cart items appear with images and a remove button:
 
-  ![screenshot4](./static/screenshots/cart-items.PNG)
+  ![screenshot6](./static/screenshots/cart-items.PNG)
 
 <br/>
 
 - Checkout managed with Stripe in test mode:
 
-  ![screenshot5](./static/screenshots/stripe-checkout.PNG)
+  ![screenshot7](./static/screenshots/stripe-checkout.PNG)
 
 <br/>
 
 - Cart is emptied after checkout:
 
-  ![screenshot6](./static/screenshots/post-checkout-cart.PNG)
+  ![screenshot8](./static/screenshots/post-checkout-cart.PNG)
 
 <br/>
 
 - Order history shown in user's account page:
 
-  ![screenshot7](./static/screenshots/user-account-order-history.PNG)
+  ![screenshot9](./static/screenshots/user-account-order-history.PNG)
 
 <br/>
 
 - Root and admin users can create new products:
 
-  ![screenshot8](./static/screenshots/root-admin-create-new-products.PNG)
+  ![screenshot10](./static/screenshots/root-admin-create-new-products.PNG)
 
 <br/>
 
 - Root users can change user permissions:
 
-  ![screenshot9](./static/screenshots/root-user-permissions.PNG)
+  ![screenshot11](./static/screenshots/root-user-permissions.PNG)
