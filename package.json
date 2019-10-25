@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "start": "next start",
-    "build": "next build"
+    "start": "next start -p $3000",
+    "build": "next build",
+    "heroku-postbuild": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "ollie-brownlow",
   "license": "ISC",
   "dependencies": {
     "@types/react": "^16.9.3",
@@ -29,5 +31,8 @@
     "stripe": "^7.5.0",
     "uuid": "^3.3.2",
     "validator": "^11.1.0"
+  },
+  "engines": {
+    "node": "12.9.1"
   }
 }
