@@ -24,7 +24,7 @@ function AccountOrders({ orders }) {
         content: (
           <>
             <List.Header as="h3">
-              Total: ${order.total}
+              Total: £{order.total}
               <Label
                 content={order.email}
                 icon="mail"
@@ -40,7 +40,7 @@ function AccountOrders({ orders }) {
                   <List.Content>
                     <List.Header>{p.product.name}</List.Header>
                     <List.Description>
-                      {p.quantity} x ${p.product.price} = $
+                      {p.quantity} x £{p.product.price} = £
                       {`${p.quantity * p.product.price}`}
                     </List.Description>
                   </List.Content>

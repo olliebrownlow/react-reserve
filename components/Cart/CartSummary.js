@@ -19,7 +19,7 @@ function CartSummary({ products, handleCheckout, success }) {
     <>
       <Divider />
       <Segment clearing size="large">
-        <strong>Sub total:</strong> ${cartAmount}
+        <strong>Sub total:</strong> £{cartAmount}
         <StripeCheckout
           name="React Reserve"
           amount={stripeAmount}
