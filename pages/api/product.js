@@ -37,10 +37,10 @@ async function handlePostRequest(req, res) {
       name,
       price,
       description,
-      mediaUrl
+      mediaUrl,
     }).save();
 
-    res.status(201).json({ product });
+    res.status(201).json(product);
   } catch (error) {
     console.error(error);
     res.status(500).send("Server error while trying to create product");
