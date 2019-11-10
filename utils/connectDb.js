@@ -13,7 +13,7 @@ async function connectDb() {
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   });
   console.log("DB connected");
   connection.isConnected = db.connections[0].readystate;
