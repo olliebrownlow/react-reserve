@@ -16,7 +16,7 @@ function catchErrors(error, displayError) {
   } else {
     // something else happened in making the request that triggered the error
     errorMsg = error;
-    console.error("Error message is:", errorMsg);
+    console.error("Error message", errorMsg);
   }
   displayError(errorMsg);
 }

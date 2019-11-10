@@ -6,7 +6,7 @@ import {
   Image,
   Message,
   Header,
-  Icon
+  Icon,
 } from "semantic-ui-react";
 import React from "react";
 import axios from "axios";
@@ -17,7 +17,7 @@ const INITIAL_PRODUCT = {
   name: "",
   price: "",
   media: "",
-  description: ""
+  description: "",
 };
 
 function CreateProduct() {
@@ -38,12 +38,28 @@ function CreateProduct() {
     isProduct ? setDisabled(false) : setDisabled(true);
   }, [product]);
 
-  function handleChange(e) {
-    const { name, value, files } = e.target;
-    if (name === "media" && files[0]) {
+  // function handleChange(e) {
+  //   const { name, value, files } = e.target;
+  //   if (name === "media" && files[0]) {
+  //     setProduct(prevState => ({ ...prevState, media: files[0] }));
+  //     setMediaPreview(window.URL.createObjectURL(files[0]));
+  //   } else {
+  //     setProduct(prevState => ({ ...prevState, [name]: value }));
+  //   }
+  // }
+
+  function handleChange(event) {
+    const { name, value, files } = event.target;
+
+    if (name === "media") {
+      //updating the media property
       setProduct(prevState => ({ ...prevState, media: files[0] }));
-      setMediaPreview(window.URL.createObjectURL(files[0]));
+      //setMediaPreview(window.URL.createObjectURL(files[0]));
+      if (name === "media" && event.target.files[0]) {
+        setMediaPreview(window.URL.createObjectURL(files[0])); //Showing preview of the image uploaded by the user
+      }
     } else {
+      //updating the object with property name to the value typed by the user.
       setProduct(prevState => ({ ...prevState, [name]: value }));
     }
   }
