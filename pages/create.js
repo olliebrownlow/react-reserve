@@ -69,7 +69,10 @@ function CreateProduct() {
     data.append("file", product.media);
     data.append("upload_preset", "reactreserve");
     data.append("cloud_name", "olliescloud");
-    const response = await axios.post(process.env.CLOUDINARY_URL, data);
+    const response = await axios.post(
+      "https://api.cloudinary.com/v1_1/olliescloud/image/upload",
+      data
+    );
     const mediaUrl = response.data.url;
     return mediaUrl;
   }
